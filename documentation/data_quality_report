@@ -1,0 +1,109 @@
+# Data Quality Report
+
+## 1. Overview
+
+A data quality assessment was performed on the supermarket transaction
+dataset before beginning the analytical phase.
+
+The assessment focused on completeness, uniqueness, consistency,
+validity, and suitability for analysis.
+
+## 2. Data Quality Summary
+
+| Quality Check         | Result          | Status |
+| ---                   | ---             | ---    |
+| Total Records         | 1,000           | Pass   |
+| Total Columns         | 17              | Pass   |
+| Missing Values        | None identified | Pass   |
+| Duplicate Invoice IDs | None identified | Pass   |
+| Branch Values         | 3               | Pass   |
+| City Values           | 3               | Pass   |
+| Customer Types        | 2               | Pass   |
+| Gender Values         | 2               | Pass   |
+| Product Lines         | 6               | Pass   |
+| Payment Methods       | 3               | Pass   |
+
+## 3. Completeness
+
+No missing values were identified in the dataset.
+
+This means all records contain values across the available fields and
+the dataset does not require missing-value imputation for the current
+analysis.
+
+## 4. Uniqueness
+
+Each Invoice ID is unique within the dataset.
+
+This allows Invoice ID to be used as the transaction identifier.
+
+## 5. Consistency
+
+Categorical fields should be checked for consistent naming and spelling
+before analysis.
+
+The following fields require categorical consistency checks:
+
+- Branch
+- City
+- Customer Type
+- Gender
+- Product Line
+- Payment
+
+## 6. Data Type Validation
+
+The following fields should be stored using appropriate data types:
+
+- Invoice ID → Text
+- Branch → Text
+- City → Text
+- Customer Type → Text
+- Gender → Text
+- Product Line → Text
+- Unit Price → Decimal
+- Quantity → Whole Number
+- Tax 5% → Decimal
+- Sales → Decimal
+- Date → Date
+- Time → Time
+- Payment → Text
+- COGS → Decimal
+- Gross Margin Percentage → Decimal
+- Gross Income → Decimal
+- Rating → Decimal
+
+## 7. Potential Data Issues
+
+Although no missing values or duplicate transaction IDs were identified,
+the following checks should be performed during data preparation:
+
+1. Confirm that numerical fields contain valid numerical values.
+2. Confirm that dates are correctly interpreted as dates.
+3. Confirm that times are correctly interpreted as time values.
+4. Check for unusual or extreme transaction quantities.
+5. Check for unusual sales values.
+6. Confirm that categorical values are consistently formatted.
+7. Validate relationships between Sales, Quantity, Unit Price and Tax.
+
+## 8. Business Impact
+
+The current dataset appears suitable for exploratory analysis and
+dashboard development.
+
+However, the dataset has limitations. It does not contain inventory,
+operating expenses, employee costs, supplier information, marketing
+costs, or competitor pricing.
+
+Therefore, the analysis can identify sales and gross-income patterns,
+but it cannot provide a complete assessment of net profitability or
+operational efficiency.
+
+## 9. Conclusion
+
+The dataset is sufficiently complete for the planned analysis.
+
+Further validation and transformation will be performed during the
+data preparation stage before the final SQL and Power BI analysis.
+
+  
